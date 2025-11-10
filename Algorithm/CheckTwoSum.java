@@ -1,5 +1,11 @@
 package Algorithm;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class CheckTwoSum {
+//    This is a brute force approach
+//    Time = O(n^2) , space = O(1)
 
     public int[] checkForTwoSum(int[] nums, int target){
         int loopCount =0;
@@ -22,4 +28,24 @@ public class CheckTwoSum {
         }
         return null;
     }
+
+    //HashMap approach
+//    Time = O(n), space = O(n)
+
+    public int[] checkForTwoSumUsingHashMap(int[] nums, int target){
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i<nums.length; i++){
+            int compliment = target - nums[i];
+
+            if (map.containsKey(compliment)){
+                System.out.println(map.get(compliment) + " and " + i + " gives " + target);
+                return new int[]{map.get(compliment), i};
+            }
+            map.put(nums[i], i);
+        }
+        return null;
+    }
+
+
 }
