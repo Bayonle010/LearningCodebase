@@ -35,4 +35,73 @@ public class LinearSearch {
         return false;
 
     }
+
+
+    // given an array below, search for 3 in the range of index[1,4]
+   // int[] array = {18, 12, -7, 3, 14, 28};
+
+    static boolean searchInRange(int[] arrays, int target, int start, int end){
+        for (int i= start;  i<=end; i++){
+            if (arrays[i] == target){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    // finding the minimum numbers in an array
+    static int min(int[] array){
+        int ans = array[0];
+        for (int i = 0; i< array.length; i++){
+            if (array[i] < ans){
+                ans = array[i];
+            }
+        }
+        return ans;
+    }
+
+    // search for a target in 2D array
+    static int[] searchForTargetIn2DArray(int[][] array, int target){
+        for (int row = 0; row <= array.length; row++){
+            for (int col = 0; col < array[row].length; col++){
+                if (array[row][col] == target){
+                    return new int[]{row, col};
+                }
+            }
+        }
+        return new int[]{-1, -1};
+    }
+
+    //Given an array of nums of integers, return how many of them contain an even number of digits
+    //e.g nums = [12, 345, 2, 6, 7896
+//    ans:is 2 because  12 and 7896  contain even number of digits;
+
+    static int findEvenNumbers(int[] nums){
+        int count = 0;
+        for (int num : nums){
+            if (even(num)){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static boolean even(int num) {
+        int numberDigit = digits(num);
+
+        return numberDigit % 2 == 0;
+    }
+
+    //count the number of digit in a number
+    private static int digits(int num) {
+        int count = 0;
+        while(num > 0){
+            count++;
+            num = num/10;
+        }
+        return count;
+    }
+
+
 }
