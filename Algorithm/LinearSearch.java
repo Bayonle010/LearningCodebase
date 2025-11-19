@@ -93,14 +93,27 @@ public class LinearSearch {
         return numberDigit % 2 == 0;
     }
 
-    //count the number of digit in a number
+    //count the number of digit in a number: time complexity O(log(n)
     private static int digits(int num) {
+        if (num ==0) return 1;
+        if (num<0) num = -num;
         int count = 0;
         while(num > 0){
             count++;
             num = num/10;
         }
         return count;
+    }
+
+    //optimized method to count the number of digits in a number : time complexity O(1)
+    // Using log10 to compute the number of digits
+    // log10(num) gives the power of 10 needed to reach num
+    // Adding 1 to account for the number of digits
+    // Casting to int truncates the decimal and gives us the integer digit count
+    private static int digits2(int num){
+        if (num == 0) return 1;
+        num = Math.abs(num);
+        return (int)(Math.log10(num) + 1);
     }
 
 
