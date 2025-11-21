@@ -1,11 +1,19 @@
 package Algorithm;
 
+
+import java.util.ArrayList;
+
 public class LinearSearch {
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,6,7};
-        int ans = linearSearch(nums, 5);
+//        int[] nums = {1,2,3,4,5,6,7};
+//        int ans = linearSearch(nums, 5);
+//        System.out.println(ans);
+
+        int[][] accounts = {{1,5},{7,3},{3,5}};
+       int ans =  maximumWealth(accounts);
         System.out.println(ans);
     }
+
 
     static int linearSearch(int[] array, int target){
         if (array.length == 0){
@@ -114,6 +122,46 @@ public class LinearSearch {
         if (num == 0) return 1;
         num = Math.abs(num);
         return (int)(Math.log10(num) + 1);
+    }
+
+
+//    Question : you are given m x n integer grid accounts where accounts[i][j] is the amount of money the ith customer has in the jth bank;
+//    Return the wealth that the richest customer has;
+//    A customers wealth is the amount of money they have in all their bank accounts;
+//    The richest customer is the customer that has the maximumm length;
+//
+//    e.g Inputs : accounts =[ [1,2,3], [3,2,1]];
+//    output = 6
+//    e.g Inputs : accounts = [[1,5], [7,3], [3,5]];
+//    Output = 10; since 10 > 6 and 8
+
+
+    private static int maximumWealth(int[][] accounts){
+        int [] sumArray = sumArray(accounts);
+        return max(sumArray);
+    }
+
+    private static int[] sumArray(int[][] arrays){
+        int[] result = new int[arrays.length];
+
+        for (int i = 0; i< arrays.length; i++){
+            int total = 0;
+            for (int j=0; j< arrays[i].length; j++){
+                total= total+ arrays[i][j];
+            }
+            result[i] = total;
+        }
+        return result;
+    }
+
+    private static  int max(int[] array){
+        int ans = array[0];
+        for (int i : array) {
+            if (i > ans) {
+                ans = i;
+            }
+        }
+        return ans;
     }
 
 
