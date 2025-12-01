@@ -2,7 +2,10 @@ package Algorithm;
 
 public class Fibonacci {
     public static void main(String[] args) {
-        System.out.println(fibbo(50));
+        for (int i = 0; i<11; i++){
+            System.out.println(fibonacciFormula(i));
+        }
+
     }
 
     static int fibbo(int n){
@@ -10,5 +13,10 @@ public class Fibonacci {
             return n;
         }
         return fibbo(n-1) + fibbo(n -2);
+    }
+
+
+    static int fibonacciFormula(int n){
+        return (int) ((Math.pow(((1+Math.sqrt(5))/2), n) - Math.pow(((1 - Math.sqrt(5))/2), n)) /Math.sqrt(5));
     }
 }
