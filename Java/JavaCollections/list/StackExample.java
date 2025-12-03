@@ -1,4 +1,4 @@
-package JavaCollections.list;
+package Java.JavaCollections.list;
 
 import java.util.*;
 public class StackExample {

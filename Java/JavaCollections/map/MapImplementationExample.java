@@ -1,4 +1,4 @@
-package JavaCollections.map;
+package Java.JavaCollections.map;
 
 import java.util.*;
 public class MapImplementationExample {

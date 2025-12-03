@@ -1,4 +1,4 @@
-package JavaCollections.map;
+package Java.JavaCollections.map;
 
 public class Information {
 //    The Map interface is a structure that maps a key to every value.

@@ -1,4 +1,4 @@
-package JavaCollections.list;
+package Java.JavaCollections.list;
 import java.util.*;
 public class LinkedlistExample {
 //    The LinkedList class implements the List interface as well as the Deque interface.

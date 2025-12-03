@@ -1,6 +1,6 @@
-package JavaCollections.list;// An example for ArrayList
+package Java.JavaCollections.list;// An example for ArrayList
 // All of the classes and
-// interfaces of the collection
+// Java.interfaces of the collection
 // framework are bundled into 
 // the java.util package
 import java.util.*;

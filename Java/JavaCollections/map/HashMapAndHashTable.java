@@ -1,4 +1,4 @@
-package JavaCollections.map;
+package Java.JavaCollections.map;
 
 public class HashMapAndHashTable {
 //    9. a) HashMap

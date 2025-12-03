@@ -1,4 +1,4 @@
-package JavaCollections.deque;
+package Java.JavaCollections.deque;
 
 public class ArrayDeque {
 //    The ArrayDeque class implements the Deque interface. ArrayDeque is a re-sizable implementation of Deque,

@@ -1,4 +1,4 @@
-package JavaCollections.set;
+package Java.JavaCollections.set;
 
 public class HashSet<S> {
 //    The HashSet class implements the Set interface.

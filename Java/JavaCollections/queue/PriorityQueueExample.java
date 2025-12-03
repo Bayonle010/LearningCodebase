@@ -1,4 +1,4 @@
-package JavaCollections.queue;
+package Java.JavaCollections.queue;
 
 import  java.util.*;
 public class PriorityQueueExample {

@@ -1,4 +1,4 @@
-//package JavaCollections.set;
+//package Java.JavaCollections.set;
 //
 //import java.util.*;
 //public class TreeSet {

@@ -1,4 +1,4 @@
-package JavaCollections.set;
+package Java.JavaCollections.set;
 
 public class LinkedHashSet {
 //    LinkedHashSet implements the Set interface. The LinkedHashSet is very similar to the HashSet with the difference being that for every bucket the structure uses to store elements is a doubly-linked list. The LinkedHashSet ordering is better compared to HashSet without any additional costs.

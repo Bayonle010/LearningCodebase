@@ -1,4 +1,4 @@
-package JavaCollections.list;// An example for Vector
+package Java.JavaCollections.list;// An example for Vector
 import java.util.*;
 
 public class VectorExample {

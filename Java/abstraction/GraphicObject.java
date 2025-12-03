@@ -1,4 +1,4 @@
-package abstraction;
+package Java.abstraction;
 
 public abstract class GraphicObject {
     int x,y;

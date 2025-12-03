@@ -1,4 +1,4 @@
-package abstraction;
+package Java.abstraction;
 
 public class Rectangle extends GraphicObject{
     @Override
