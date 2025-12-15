@@ -4,7 +4,7 @@ public class BinarySearchAlgorithm  {
     public static void main(String[] args) {
         int [] input = {2,4,6,8,9,10,12,14};
         System.out.println(
-                findCeilingInAscSortedArray(input, 7)
+                findFloorInAscSortedArray(input, 7)
         );
 
     }
@@ -71,7 +71,8 @@ public class BinarySearchAlgorithm  {
     }
 
 
-    // Ceiling is a number greater than or equal to target number
+    //<<------------ INTERVIEW QUESTION --------->>
+    // 1.  Ceiling : is the least number in an array greater than or equal to target number
     private static int findCeilingInAscSortedArray(int[] array, int target){
         int start = 0;
         int end = array.length -1;
@@ -88,4 +89,26 @@ public class BinarySearchAlgorithm  {
         }
         return start;
     }
+
+    //<<------------ INTERVIEW QUESTION --------->>
+    // 2.  Floor of a number :  is the greatest number in an array less than or equal to target number
+    private static int findFloorInAscSortedArray(int[] array, int target){
+        int start = 0;
+        int end = array.length -1;
+        while (start<= end){
+            int mid = start + (end -start)/2;
+            if (target < array[mid]){
+                end = mid -1;
+            }else if (target > array[mid]){
+                start = mid +1;
+            }else {
+                // target found
+                return mid;
+            }
+        }
+        return end;
+    }
+
+
+
 }
