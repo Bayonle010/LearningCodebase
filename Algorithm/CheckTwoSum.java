@@ -15,11 +15,9 @@ public class CheckTwoSum {
 
             for(int j = i+1; j < nums.length ; j++){
                 int sum = nums[i] + nums[j];
-                System.out.println("Trying: " + nums[i] + " + " + nums[j] + " = " + sum);
 
                 if( sum == target) {
-                    System.out.println("found target");
-                    System.out.println("[" + i + ", " + j + "]");
+//
                     System.out.println("the sum of " + nums[i] + " and " + nums[j] + " gives " + target);
                     System.out.println("Total loops: " + loopCount);
                     return new int[]{i, j};

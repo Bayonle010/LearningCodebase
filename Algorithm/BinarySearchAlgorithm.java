@@ -3,9 +3,12 @@ package Algorithm;
 public class BinarySearchAlgorithm  {
     public static void main(String[] args) {
         //int [] input = {2,4,6,8,9,10,12,14};
-        char[] letters = {'c', 'f', 'g'};
+//        char[] letters = {'c', 'f', 'g'};
+
+        int[] mountainArray = {1,2,3,4,5,3,1};
+
         System.out.println(
-                findTheSmallestCharInAnArray(letters, 'c' )
+                findInMountainArray(3, mountainArray)
         );
 
     }
@@ -52,7 +55,9 @@ public class BinarySearchAlgorithm  {
 
         while (start<= end){
             int mid = start + (end - start)/2;
-            if (array[mid] == target) {return  mid;}
+            if (array[mid] == target) {
+                return  mid;
+            }
             if (isAscOrder){
                 if (target < mid){
                     end = mid -1;
@@ -223,7 +228,7 @@ public class BinarySearchAlgorithm  {
         return -1;
     }
 
-    public int peakIndexMountainArray(int[]  arr){
+    public static int peakIndexMountainArray(int[]  arr){
         int start = 0;
         int end = arr.length -1;
 
@@ -242,6 +247,53 @@ public class BinarySearchAlgorithm  {
 
         return start; // or end
 
+    }
+
+
+    public static int findInMountainArray(int target, int[] arr) {
+
+        int peak =  peakIndexMountainArray(arr);
+        System.out.println("peakIndex is : " + peak);
+
+        int ansInAscArray = binarySearchForAscSoredAArray(arr, target, 0 , peak -1);
+        if (ansInAscArray != -1 ){
+            return ansInAscArray;
+        }else {
+            return binarySearchForDscSortedArray(arr, target, peak, arr.length -1 );
+        }
+
+    }
+
+    static int binarySearchForAscSoredAArray(int[] array, int target, int start, int end){
+        while (start <= end){
+            int mid = start + (end - start)/2;
+
+            if (target < array[mid]){
+                end = mid - 1;
+            } else if (target > array[mid]) {
+                start = mid + 1;
+
+            }else{
+                return mid;
+            }
+        }
+
+        return -1;
+    }
+
+    private static int binarySearchForDscSortedArray(int[] array, int target, int start, int end){
+        while (start<= end){
+            int mid = start + (end -start)/2;
+            if (target > array[mid]){
+                end = mid -1;
+            }else if (target < array[mid]){
+                start = mid +1;
+            }else {
+                // target found
+                return mid;
+            }
+        }
+        return -1;
     }
 
 
