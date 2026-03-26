@@ -1,4 +1,4 @@
-package Java.consructor;
+package Java.oop.consructor;
 
 public class Constructor {
     public static void main(String[] args) {

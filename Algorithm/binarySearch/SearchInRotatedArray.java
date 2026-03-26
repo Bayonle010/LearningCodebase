@@ -3,7 +3,12 @@ package Algorithm.binarySearch;
 public class SearchInRotatedArray {
     public static void main(String[] args) {
         int [] rotatedArray = {4, 5, 6, 7, 0, 1 ,2};
+        int [] rotatedArray2 = {1};
         System.out.println(searchInRotatedArray(rotatedArray, 0));
+        System.out.println(searchInRotatedArray(rotatedArray, 3));
+        System.out.println(searchInRotatedArray(rotatedArray2, 0));
+
+
 
     }
 
