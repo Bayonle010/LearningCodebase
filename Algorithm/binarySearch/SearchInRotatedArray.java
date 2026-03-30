@@ -97,4 +97,7 @@ public class SearchInRotatedArray {
         }
         return -1;
     }
+
+
+//    NOTE: number of times an arry is rotated = pivot + 1. which also means the index of the smallest element in the array
 }
