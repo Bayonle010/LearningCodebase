@@ -1,6 +1,6 @@
 package Java.oop.consructor;
 
-public class Person {
+public class    Person {
     String name;
 
     public Person(String name) {
