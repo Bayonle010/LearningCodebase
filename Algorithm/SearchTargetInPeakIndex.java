@@ -1,4 +1,4 @@
-package Algorithm.binarySearch;
+package Algorithm;
 
 public class SearchTargetInPeakIndex {
 

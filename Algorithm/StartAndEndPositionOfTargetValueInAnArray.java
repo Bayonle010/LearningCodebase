@@ -1,4 +1,4 @@
-package Algorithm.binarySearch;
+package Algorithm;
 
 public class StartAndEndPositionOfTargetValueInAnArray {
 //    /4. Leetcode 34. (facebook question)

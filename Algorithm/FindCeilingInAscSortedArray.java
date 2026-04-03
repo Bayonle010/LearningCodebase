@@ -1,9 +1,9 @@
-package Algorithm.binarySearch;
+package Algorithm;
 
-public class FindFloorInAscSortedArray {
+public class FindCeilingInAscSortedArray {
     //<<------------ INTERVIEW QUESTION --------->>
-    // 2.  Floor of a number :  is the greatest number in an array less than or equal to target number
-    private static int findFloorInAscSortedArray(int[] array, int target){
+    // 1.  Ceiling : is the least number in an array greater than or equal to target number
+    private static int findCeilingInAscSortedArray(int[] array, int target){
         int start = 0;
         int end = array.length -1;
         while (start<= end){
@@ -17,6 +17,6 @@ public class FindFloorInAscSortedArray {
                 return mid;
             }
         }
-        return end;
+        return start;
     }
 }

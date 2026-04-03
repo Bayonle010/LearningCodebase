@@ -1,4 +1,4 @@
-package Algorithm.binarySearch;
+package Algorithm;
 
 public class SearchInInfiniteArray {
     // Search in an infinite array

@@ -1,6 +1,5 @@
-package Algorithm.binarySearch;
+package Algorithm;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class RolColMatrix {
