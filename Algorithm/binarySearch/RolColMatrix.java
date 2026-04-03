@@ -6,12 +6,23 @@ import java.util.Arrays;
 public class RolColMatrix {
     public static void main(String[] args) {
         int [][] array = {
-                {1, 2, 3,},
+                {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9 }
         };
 
-        System.out.println(Arrays.toString(findTargetIn2DArray(array, 6)));
+        int [][] array2 = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15,16}
+        };
+
+
+
+        System.out.println(array.length);
+
+        System.out.println(Arrays.toString(findTargetIn2DArray(array2, 12)));
     }
 
     static int length(int [][] matrix){
