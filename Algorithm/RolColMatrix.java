@@ -24,9 +24,14 @@ public class RolColMatrix {
         System.out.println(Arrays.toString(findTargetIn2DArray(array2, 12)));
     }
 
-    static int length(int [][] matrix){
-        return matrix.length;
-    }
+    /**
+     This is used when:
+     1. Every row is sorted left to right
+     2. Every column is sorted top to bottom.
+
+     Time complexity = O(row + cols)
+     **/
+
 
     static int[] findTargetIn2DArray(int [][] matrix, int target){
         int row = 0;
