@@ -1,26 +1,25 @@
 package interview.suspicioustxn;
 
+import java.util.List;
+
 public class Main {
- /**
- You are given a list of transactions. An account is considered suspicious
- if it makes more than 3 transactions in total.
- Return a list of all suspicious accountIds with no duplicates.
-  **/
 
+    public static void main(String[] args) {
+        List<Transaction> transactions = List.of(
+                new Transaction("ACC001", 1000),
+                new Transaction("ACC001", 5000),
+                new Transaction("ACC001", 8000),
+                new Transaction("ACC001", 10000),
+                new Transaction("ACC002", 1000),
+                new Transaction("ACC002", 9000),
+                new Transaction("ACC001", 50000)
+        );
 
-    /**
+        List<String> result = TransactionService.findSuspiciousTransaction(transactions);
+//        System.out.println(result); // [ACC001]
 
-     You are given a list of transactions. A transaction is considered suspicious
-     if the same accountId makes more than 3 transactions within any 10-second window.
-     Return a list of all accountIds that have at least one suspicious window.
-     The result should contain no duplicates.
+        List<String> response = TransactionService.findTransactionsMoreThan3InAList(transactions);
+        System.out.println(response);
 
-     accountId: "ACC001", timestamp: 1000
-     accountId: "ACC001", timestamp: 5000
-     accountId: "ACC001", timestamp: 8000
-     accountId: "ACC001", timestamp: 10000   ← 4 transactions within 10 seconds (1000–10000) → suspicious
-     accountId: "ACC002", timestamp: 1000
-     accountId: "ACC002", timestamp: 9000    ← only 2 transactions → clean
-     accountId: "ACC001", timestamp: 50000   ← new window, not suspicious alone
-     **/
+    }
 }
