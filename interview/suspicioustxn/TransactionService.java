@@ -35,6 +35,12 @@ public class TransactionService {
         Map<String, List<Integer>> accountToTimeStamp = new HashMap<>();
 
         for (Transaction transaction : transactions){
+
+//            if (!accountToTimeStamp.containsKey(transaction.getAccountId())){
+//                accountToTimeStamp.put(transaction.getAccountId(), new ArrayList<>());
+//            }
+//            accountToTimeStamp.get(transaction.getAccountId()).add(transaction.getTimeStamp());
+            
             accountToTimeStamp.computeIfAbsent(
                         transaction.getAccountId(), k-> new ArrayList<>()
                     )
