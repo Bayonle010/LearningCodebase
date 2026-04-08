@@ -17,4 +17,15 @@ public class Streams {
                 .forEach(System.out::print);
     }
 
+    // using flatmap
+    static public void flatMapUsage(){
+        List<List<Integer>> list = (List.of(List.of(1,2), List.of(3, 4)));
+
+        list.stream()
+                .map(List::stream);
+
+        list.stream()
+                .flatMap(List::stream);
+    }
+
 }
