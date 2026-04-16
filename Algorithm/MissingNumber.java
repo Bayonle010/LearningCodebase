@@ -5,9 +5,32 @@ import java.util.Arrays;
 public class MissingNumber {
 
     public static void main(String[] args) {
-        int[] array = {5, 4, 2, 1};
-        int missingNumber = missingNumber(array);
+        int[] array = {5, 4, 2,3, 0};
+        int missingNumber = missingNumberInRange0_to_n(array);
         System.out.println(missingNumber);
+
+    }
+
+    static int missingNumberInRange0_to_n(int[] array){
+        int i = 0;
+        int lengthOfArray = array.length;
+
+        while (i < lengthOfArray){
+            int correctIndex = array[i];
+            if (array[i]< array.length && array[i] != array[correctIndex]){
+                swap(array, i, correctIndex);
+            }else {
+                i++;
+            }
+        }
+
+        for (int index = 0; index < lengthOfArray; index++){
+            if (array[index] != index){
+                return index;
+            }
+        }
+
+        return lengthOfArray;
 
     }
 
