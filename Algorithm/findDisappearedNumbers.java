@@ -35,8 +35,6 @@ public class findDisappearedNumbers {
                 i++;
             }
         }
-
-
         List<Integer> result = new ArrayList<>();
 
         for (int index = 0; index < lengthOfArray; index++){
@@ -44,9 +42,6 @@ public class findDisappearedNumbers {
                 result.add(index + 1);
             }
         }
-
-//        result.add(lengthOfArray + 1);
-
 
         return result;
     }
