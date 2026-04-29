@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class Anagram {
     // e.g listen == silent
-    
     public static boolean isAnagram(String firstLetter, String secondLetter){
         if (firstLetter.length() != secondLetter.length()){
             return false;

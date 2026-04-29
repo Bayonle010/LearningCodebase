@@ -1,6 +1,8 @@
 package Algorithm;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CheckTwoSum {
@@ -43,6 +45,24 @@ public class CheckTwoSum {
             map.put(nums[i], i);
         }
         return null;
+    }
+
+
+    public List<int[]> allTwoSum(int[] array, int target){
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        List<int[]> ans = new ArrayList<>();
+
+        for (int i = 0; i<array.length; i++){
+            int compliment = target - array[i];
+            if (map.containsKey(compliment)){
+                for (int index: map.get(compliment)){
+                    ans.add(new int[]{index, i});
+                }
+            }
+            map.computeIfAbsent(array[i], k-> new ArrayList<>()).add(i);
+        }
+
+        return ans;
     }
 
 
