@@ -20,16 +20,24 @@ public class Main {
 //
 //        list.get(0);
 
-        DoublyLinkedList list = new DoublyLinkedList();
-        list.insertFirst(3);
-        list.insertFirst(2);
-        list.insertFirst(8);
-        list.insertFirst(17);
-        list.insertLast(20);
-        list.insert(2,5);
+//        DoublyLinkedList list = new DoublyLinkedList();
+//        list.insertFirst(3);
+//        list.insertFirst(2);
+//        list.insertFirst(8);
+//        list.insertFirst(17);
+//        list.insertLast(20);
+//        list.insert(2,5);
+//
+//        list.display();
+
+        CircularLinkedList list = new CircularLinkedList();
+        list.insert(5);
+        list.insert(10);
+        list.insert(20);
+        list.insert(25);
+        list.delete(20);
 
         list.display();
-
 
     }
 }
