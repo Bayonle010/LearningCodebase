@@ -1,4 +1,4 @@
-package Algorithm.sorting;
+package Algorithm;
 
 public class PalindromeCheck {
 
