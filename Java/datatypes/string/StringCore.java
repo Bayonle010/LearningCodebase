@@ -5,10 +5,9 @@ import java.util.Locale;
 public class StringCore {
     public static void main(String[] args) {
         String name = "Bayonle";
+        name.concat("onadiran");
         System.out.println(name);
-        name = "Onadiran";
 
-        System.out.println(name);
     }
 
 
@@ -29,4 +28,7 @@ public class StringCore {
         }
         return true;
     }
+
+
+
 }
