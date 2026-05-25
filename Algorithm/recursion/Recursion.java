@@ -1,4 +1,4 @@
-package Algorithm;
+package Algorithm.recursion;
 
 public class Recursion {
 
