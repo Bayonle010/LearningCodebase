@@ -6,10 +6,11 @@ import java.util.Arrays;
 public class SortingRevision {
 
     public static void main(String[] args) {
-        int[] array = {8,6,7,2,4};
+        int[] array = {4,2,1,3};
 //        bubbleSort(array);
 //        insertionSort(array);
-        selectionSort(array);
+//        selectionSort(array);
+        cyclicSort(array);
         System.out.println(Arrays.toString(array));
 //        System.out.println(getMin(array));
     }
@@ -50,6 +51,20 @@ public class SortingRevision {
 
             if (minIndex != i){
                 swap(array, minIndex, i);
+            }
+        }
+    }
+
+
+    static void cyclicSort(int[] array){
+        int i = 0;
+        while (i < array.length){
+            int correctIndex = array[i] -1;
+
+            if (array[i] != array[correctIndex]){
+                swap(array, i, correctIndex);
+            }else {
+                i++;
             }
         }
     }
