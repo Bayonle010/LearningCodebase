@@ -23,6 +23,7 @@ public class BubbleSort {
 
      **/
 
+//    Shift the largest element to the end.
     static void bubbleSort(int[] array){
         boolean swapped;
 

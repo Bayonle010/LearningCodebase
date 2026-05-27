@@ -10,6 +10,8 @@ public class SelectionSort {
         System.out.println(Arrays.toString(array));
     }
 
+
+//    pick the largest or smallest element and fix it to the last or first respectively by replacing the element in the position
     static void selectionSort(int[] array){
 
         for (int i = 0; i< array.length; i++){

@@ -12,7 +12,7 @@ public class InsertionSort {
         System.out.println(Arrays.toString(array));
     }
 
-
+//    it inserts one current element into an already sorted region
     static void insertionSort(int[] array){
         for (int i = 0; i < array.length -  1; i++){
 
