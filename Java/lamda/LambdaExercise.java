@@ -41,7 +41,7 @@ public class LambdaExercise {
 
 
 
-        
+
         Consumer<String> printWordConcise = sentence-> {
             Arrays.asList(sentence.split(" ")).forEach(s-> System.out.println(s));
         };
