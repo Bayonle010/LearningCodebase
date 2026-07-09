@@ -2,9 +2,9 @@ package Algorithm.sorting;
 
 import java.util.Arrays;
 
-public class MergerSort {
+public class MergeSort {
     public static void main(String[] args) {
-        int[] array = {5,4,3,2,1};
+        int[] array = {5, 7, 6, 4, 2, 1, 4, 10};
         array = mergeSort(array);
         System.out.println(Arrays.toString(array));
     }
