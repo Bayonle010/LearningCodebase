@@ -1,4 +1,4 @@
-package Algorithm;
+package Algorithm.random;
 
 public class FindSmallestCharInAnArray {
     // 3.  Given a characters array letters that is sorted in non-decreasing order and a character target,

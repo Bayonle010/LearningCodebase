@@ -1,6 +1,4 @@
-package Algorithm;
-
-import java.util.Arrays;
+package Algorithm.random;
 
 public class MissingNumber {
 

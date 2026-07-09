@@ -1,4 +1,4 @@
-package Algorithm;
+package Algorithm.random;
 
 import java.util.HashMap;
 import java.util.Map;

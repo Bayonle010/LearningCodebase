@@ -1,4 +1,4 @@
-package Algorithm;
+package Algorithm.random;
 
 public class BitwiseOperator {
     public static void main(String[] args) {

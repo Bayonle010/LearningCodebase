@@ -1,4 +1,4 @@
-package Algorithm;
+package Algorithm.random;
 
 public class StartAndEndPositionOfTargetValueInAnArray {
 //    /4. Leetcode 34. (facebook question)

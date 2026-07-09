@@ -1,9 +1,6 @@
-package Algorithm;
+package Algorithm.random;
 
-import java.io.StringReader;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class FirstMatchLetterInTwoStrings {

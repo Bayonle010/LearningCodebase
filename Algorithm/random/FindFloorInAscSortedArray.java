@@ -1,4 +1,4 @@
-package Algorithm;
+package Algorithm.random;
 
 public class FindFloorInAscSortedArray {
     //<<------------ INTERVIEW QUESTION --------->>
