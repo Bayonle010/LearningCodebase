@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] array = {5, 3, 8, 1, 4, 7, 2};
+        int[] array = {7,2,3,6,8,1,5};
 
         quickSort(array, 0, array.length - 1);
 
@@ -20,7 +20,10 @@ public class QuickSort {
 
         int pivotIndex = partition(array, low, high);
 
+        // sort elements before the pivot
         quickSort(array, low, pivotIndex - 1);
+
+        // sort elements after the pivot
         quickSort(array, pivotIndex + 1, high);
     }
 
