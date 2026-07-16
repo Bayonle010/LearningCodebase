@@ -38,6 +38,7 @@ public class PracticeQuestion {
     }
 
     /*
+        QUESTION 1
         Write a Java method that receives an array of words and returns a Map<String, Integer> containing how many times each word appears.
     */
 
@@ -59,6 +60,7 @@ public class PracticeQuestion {
 
 
     /*
+        QUESTION 2
         Find the Frequency of Numbers
 
         Given an integer array, return a map showing how many times each number appears.
@@ -75,6 +77,7 @@ public class PracticeQuestion {
     }
 
     /*
+        QUESTION 3
         Find the First Non-Repeating Character
 
         Given a string, return the first character that appears only once
@@ -98,6 +101,7 @@ public class PracticeQuestion {
     }
 
     /*
+        QUESTION 4
         Check Whether Two Arrays Have the Same Frequencies
         Given two integer arrays, return true when they contain the same numbers with the same frequencies, regardless of order.
      */
@@ -127,6 +131,7 @@ public class PracticeQuestion {
     }
 
     /*
+        QUESTION 5
         Two Sum
 
         Given an integer array and a target, return the indices of two numbers whose sum equals the target.
@@ -149,6 +154,8 @@ public class PracticeQuestion {
     }
 
     /*
+        QUESTION 6
+
         Group Words by Their First Character
 
         Given an array of words, group words that start with the same character.
@@ -164,15 +171,6 @@ public class PracticeQuestion {
                     firstCharacter, key-> new ArrayList<>()
             ).add(word);
 
-
-//            if (map.containsKey(firstCharacter)){
-//
-//                map.get(firstCharacter).add(word);
-//            }else {
-//                List<String> values = new ArrayList<>();
-//                values.add(word);
-//                map.put(firstCharacter, values);
-//            }
         }
 
         return map;
@@ -181,6 +179,9 @@ public class PracticeQuestion {
     }
 
     /*
+
+        QUESTION 8
+
         Find Duplicate Numbers
 
         Given an integer array, return a list containing numbers that appear more than once.
@@ -205,6 +206,89 @@ public class PracticeQuestion {
 
         return result;
     }
+
+
+    /*
+
+    QUESTION 9
+     Finance Map Problem : Transaction Velocity Detection
+
+    A bank wants to identify accounts making transactions too quickly.
+    An account is considered suspicious when it makes more than three transactions within any ten-second window.
+    That means an account must make at least four transactions, where:
+    latest timestamp - earliest timestamp <= 10,000 milliseconds
+    Return every suspicious accountId.
+    The result must not contain duplicates.
+
+    E.g:
+
+     accountId: "ACC001", timestamp: 1000
+     accountId: "ACC001", timestamp: 5000
+     accountId: "ACC001", timestamp: 8000
+     accountId: "ACC001", timestamp: 10000   ← 4 transactions within 10 seconds (1000–10000) → suspicious
+     accountId: "ACC002", timestamp: 1000
+     accountId: "ACC002", timestamp: 9000    ← only 2 transactions → clean
+     accountId: "ACC001", timestamp: 50000   ← new window, not suspicious alone
+
+     */
+
+
+    static List<String> findSuspiciousAccounts(List<Transaction> transactions){
+        Map<String, List<Long>> countMaps = new HashMap<>();
+
+        for (Transaction transaction : transactions){
+            countMaps.computeIfAbsent(transaction.accountId, k ->new ArrayList<>() ).add(transaction.timestamp);
+        }
+
+        Set<String> suspiciousAccounts = new HashSet<>();
+
+        for (Map.Entry<String, List<Long>> entry : countMaps.entrySet()){
+
+            String accountId = entry.getKey();
+            List<Long> timeStamp = entry.getValue();
+
+            Collections.sort(timeStamp);
+
+            int left = 0;
+
+            for (int right = 0; right < timeStamp.size(); right++){
+
+                while (timeStamp.get(right) - timeStamp.get(left) > 10000 ){
+                    left++;
+                }
+
+                int windowSize = right - left + 1;
+
+                if (windowSize > 3){
+                    suspiciousAccounts.add(accountId);
+                    break;
+                }
+            }
+        }
+
+        return new ArrayList<>(suspiciousAccounts);
+    }
+
+
+    static class  Transaction{
+        private String accountId;
+        private long timestamp;
+
+        public Transaction(String accountId, long timestamp) {
+            this.accountId = accountId;
+            this.timestamp = timestamp;
+        }
+
+        public String getAccountId() {
+            return accountId;
+        }
+
+        public long getTimestamp() {
+            return timestamp;
+        }
+
+    }
+
 
 
 }
