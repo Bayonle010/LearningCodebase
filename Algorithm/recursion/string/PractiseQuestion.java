@@ -25,16 +25,16 @@ public class PractiseQuestion {
         }
     }
 
-    static String skipLetterA( String unprocesed){
-        if (unprocesed.isEmpty()){
+    static String skipLetterA( String unprocessed){
+        if (unprocessed.isEmpty()){
             return "";
         }
 
-        char ch = unprocesed.charAt(0);
+        char ch = unprocessed.charAt(0);
         if (ch == 'a'){
-           return skipLetterA(unprocesed.substring(1));
+           return skipLetterA(unprocessed.substring(1));
         }else {
-            return ch + (unprocesed.substring(1));
+            return ch + skipLetterA(unprocessed.substring(1));
         }
     }
 
