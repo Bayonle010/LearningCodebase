@@ -3,8 +3,11 @@ package Java.JavaCollections.map;
 import com.sun.source.tree.BreakTree;
 
 import javax.naming.InitialContext;
+import javax.sound.midi.MidiFileFormat;
+import javax.swing.*;
 import javax.swing.text.StyleContext;
 import java.io.CharArrayReader;
+import java.time.LocalDate;
 import java.util.*;
 
 public class PracticeQuestion {
@@ -22,8 +25,8 @@ public class PracticeQuestion {
 
         // System.out.println(countWords(words));
         // System.out.println(countFrequency(numbers));
-        System.out.println(firstNonRepeatingCharacter(text));
-        System.out.println(haveSameFrequency(first, second));
+//        System.out.println(firstNonRepeatingCharacter(text));
+//        System.out.println(haveSameFrequency(first, second));
 
         int[] nums = {2, 7, 11, 15};
         int target = 9;
@@ -34,6 +37,58 @@ public class PracticeQuestion {
         };
 
         System.out.println(groupByFirstCharacter(w));
+
+        // suspicious transaction
+        List<Transaction> transactions = List.of(
+                new Transaction("ACC001", 1000),
+                new Transaction("ACC002", 1000),
+                new Transaction("ACC001", 5000),
+                new Transaction("ACC001", 8000),
+                new Transaction("ACC002", 9000),
+                new Transaction("ACC001", 10000),
+                new Transaction("ACC001", 50000),
+                new Transaction("ACC003", 60000),
+                new Transaction("ACC003", 61000),
+                new Transaction("ACC003", 62000),
+                new Transaction("ACC003", 63000)
+        );
+
+        // Daily Spending amount
+
+        List<SpendingTransaction> spendingTransactions = List.of(
+                new SpendingTransaction(
+                        "ACC001",
+                        LocalDate.of(2026, 7, 15),
+                        5_000,
+                        TransactionType.DEBIT
+                ),
+                new SpendingTransaction(
+                        "ACC001",
+                        LocalDate.of(2026, 7, 15),
+                        3_000,
+                        TransactionType.DEBIT
+                ),
+                new SpendingTransaction(
+                        "ACC001",
+                        LocalDate.of(2026, 7, 15),
+                        10_000,
+                        TransactionType.CREDIT
+                ),
+                new SpendingTransaction(
+                        "ACC001",
+                        LocalDate.of(2026, 7, 16),
+                        2_000,
+                        TransactionType.DEBIT
+                ),
+                new SpendingTransaction(
+                        "ACC002",
+                        LocalDate.of(2026, 7, 15),
+                        7_000,
+                        TransactionType.DEBIT
+                )
+        );
+
+        System.out.println(calculateDailySpending(spendingTransactions));
 
     }
 
@@ -233,6 +288,8 @@ public class PracticeQuestion {
      */
 
 
+
+
     static List<String> findSuspiciousAccounts(List<Transaction> transactions){
         Map<String, List<Long>> countMaps = new HashMap<>();
 
@@ -287,6 +344,67 @@ public class PracticeQuestion {
             return timestamp;
         }
 
+    }
+
+
+    /*
+    Daily Spending per Account : A bank wants to calculate how much each account spends every day.
+
+    Each transaction contains:
+
+    accountId
+    date
+    amount
+    type: DEBIT or CREDIT
+
+    Only DEBIT transactions should be included.
+     */
+
+    static Map<String, Map<LocalDate, Long>> calculateDailySpending(List<SpendingTransaction> transactions){
+
+        Map<String, Map<LocalDate, Long>>  spendingByAccount = new HashMap<>();
+
+        for (SpendingTransaction transaction : transactions){
+
+
+            if (transaction.type != TransactionType.DEBIT){
+                continue;
+            }
+
+            Map<LocalDate, Long> accountAmountMap =
+                    spendingByAccount.computeIfAbsent(
+                            transaction.accountId,
+                            key-> new HashMap<>());
+
+            accountAmountMap.merge(transaction.date, transaction.amount, Long::sum);
+
+        }
+
+        return  spendingByAccount;
+    }
+
+    enum TransactionType {
+        DEBIT,
+        CREDIT
+    }
+
+    static class SpendingTransaction {
+        String accountId;
+        LocalDate date;
+        long amount;
+        TransactionType type;
+
+        SpendingTransaction(
+                String accountId,
+                LocalDate date,
+                long amount,
+                TransactionType type
+        ) {
+            this.accountId = accountId;
+            this.date = date;
+            this.amount = amount;
+            this.type = type;
+        }
     }
 
 
