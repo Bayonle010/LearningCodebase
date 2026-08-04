@@ -1,5 +1,7 @@
 package Algorithm.backtracking;
 
+import java.util.ArrayList;
+
 public class Maze {
     public static void main(String[] args) {
         int numberOfPaths = count(3,3);
@@ -17,4 +19,25 @@ public class Maze {
 
         return  downPaths + rightPaths;
     }
+
+    static ArrayList<String> returnPaths(String path, int row, int column){
+        if (row ==1  && column == 1){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(path);
+            return list;
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (row > 1){
+            list.addAll(returnPaths(path + 'D', row -1 , column));
+        }
+
+        if (column > 1){
+            list.addAll(returnPaths(path + 'R', row, column -1));
+        }
+
+        return  list;
+    }
+
 }
