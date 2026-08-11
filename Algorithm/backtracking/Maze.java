@@ -40,4 +40,28 @@ public class Maze {
         return  list;
     }
 
+    static ArrayList<String> returnPathsDiagonal(String path, int row, int column){
+        if (row ==1  && column == 1){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(path);
+            return list;
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (row > 1 && column > 1 ){
+            list.addAll(returnPathsDiagonal(path + 'V', row -1 , column-1));
+        }
+
+        if (row > 1){
+            list.addAll(returnPathsDiagonal(path + 'D', row -1 , column));
+        }
+
+        if (column > 1){
+            list.addAll(returnPathsDiagonal(path + 'R', row, column -1));
+        }
+
+        return  list;
+    }
+
 }
