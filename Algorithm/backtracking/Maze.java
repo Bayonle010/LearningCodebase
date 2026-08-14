@@ -74,7 +74,7 @@ public class Maze {
         return  list;
     }
 
-    static void     pathRestrictions(String p, boolean[][] maze, int row, int column){
+    static void pathRestrictions(String p, boolean[][] maze, int row, int column){
 
         // Is this cell block ?
         if (!maze[row][column]){
