@@ -2,28 +2,43 @@ package Java.concurrency.synchronization;
 
 public class BankAccount {
     private  double balance;
+    private String name;
 
-    public BankAccount(double balance){
+    public BankAccount(String name, double balance){
+        this.name = name;
         this.balance = balance;
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public synchronized void setName(String name){
+        this.name = name;
+        System.out.println("Updated name =" + this.name);
+    }
+
 
     public double getBalance(){
         return this.balance;
     }
 
-    public synchronized void deposit(double amount){
+    public synchronized void  deposit(double amount){
         try{
-            Thread.sleep(100);
+            System.out.println("Deposit - Talking to the teller at the bank ...");
+            Thread.sleep(7000);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
+       // synchronized (this){
+            double originalBalance = balance;
+            balance+= amount;
 
-        double originalBalance = balance;
-        balance+= amount;
+            System.out.printf("STARTING BALANCE: %.0f, DEPOSIT (%.0f)"
+                    +
+                    " : NEW BALANCE = %.0f%n", originalBalance, amount, balance);
+      //  }
 
-        System.out.printf("STARTING BALANCE: %.0f, DEPOSIT (%.0f)"
-            +
-            " : NEW BALANCE = %.0f%n", originalBalance, amount, balance);
     }
 
     public synchronized void withdraw(double amount){
