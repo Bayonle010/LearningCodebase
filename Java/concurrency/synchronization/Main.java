@@ -17,7 +17,7 @@ public class Main {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        thread3.start();
+        thread3.start();    
         thread4.start();
 
 
