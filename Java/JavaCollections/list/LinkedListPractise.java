@@ -8,8 +8,15 @@ public class LinkedListPractise {
     private Node tail;
 
 
-    static void main() {
-        LinkedList<?> hmm = new LinkedList<>();
+     void main() {
+        LinkedList<Integer> hmm = new LinkedList<>();
+        hmm.add(1);
+        hmm.add(2);
+        hmm.add(3);
+        hmm.add(4);
+
+        display();
+
 
     }
 

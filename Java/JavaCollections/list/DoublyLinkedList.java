@@ -2,6 +2,8 @@
     
     public class DoublyLinkedList {
         private Node head;
+        private Node prev;
+
     
     
         public void display(){
@@ -80,6 +82,25 @@
             }
     
         }
+
+
+        public  void reverse(){
+
+            Node current = head;
+            Node newHead = null;
+
+            while(current != null){
+                Node next = current.next;
+                current.next = current.prev;
+                current.prev = next;
+                newHead = current;
+                current = next;
+            }
+
+            head = newHead;
+
+        }
+
     
     
     
